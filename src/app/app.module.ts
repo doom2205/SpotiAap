@@ -13,6 +13,8 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { RouterModule } from '@angular/router';
 import { ROUTER } from './app.routes';
 import { NoImgPipe } from './pipes/no-img.pipe';
+import { LoadingComponent } from './shared/loading/loading.component';
+import { TarjetasComponent } from './components/tarjetas/tarjetas.component';
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { NoImgPipe } from './pipes/no-img.pipe';
     SearchComponent,
     ArtistComponent,
     NavbarComponent,
-    NoImgPipe
+    NoImgPipe,
+    LoadingComponent,
+    TarjetasComponent
   ],
   imports: [
     BrowserModule,
