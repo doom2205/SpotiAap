@@ -22,7 +22,7 @@ export class HomeComponent {
          this.cargando=false
        })
       
-    }, 4000);
+    }, 0);
   }
 
 }

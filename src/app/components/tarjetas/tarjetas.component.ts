@@ -23,7 +23,6 @@ export class TarjetasComponent {
     }else{
       itemId=item.artists[0].id
     }
-    console.log(itemId);
     this.router.navigate(['/artist', itemId])
   }
 
