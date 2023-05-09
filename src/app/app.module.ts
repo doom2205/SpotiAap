@@ -15,6 +15,7 @@ import { ROUTER } from './app.routes';
 import { NoImgPipe } from './pipes/no-img.pipe';
 import { LoadingComponent } from './shared/loading/loading.component';
 import { TarjetasComponent } from './components/tarjetas/tarjetas.component';
+import { DomseguroPipe } from './pipes/domseguro.pipe';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { TarjetasComponent } from './components/tarjetas/tarjetas.component';
     ArtistComponent,
     NavbarComponent,
     NoImgPipe,
+    DomseguroPipe,
     LoadingComponent,
     TarjetasComponent
   ],
