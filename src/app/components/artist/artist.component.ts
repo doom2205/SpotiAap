@@ -35,5 +35,8 @@ export class ArtistComponent {
       this.top=top[0]
       console.log(this.top);})
   }
+  
+
+  
 
 }

@@ -6,14 +6,14 @@ import { map } from 'rxjs';
   providedIn: 'root'
 })
 export class SpotifyService {
-  
+
   constructor( private http:HttpClient) {
-
   }
-
+  
   getQuery(query:string){
     const headers = new HttpHeaders({
-      'Authorization': 'Bearer BQDzoxNDK7yCrA9SJMItoGXirRBqY4cSfRus7iWtGUwEK_as5PWS7Qo_RqfNlWiMJ528b_a7F5O_zVundHJoL7mZBGPSzhliFeENSSN8SKE7OQnPAC7e'
+      //clave token dada por spotify expira cada 1 hora
+      'Authorization': 'Bearer BQAIGywNMRk0Zg_omY_GNhjBMSoLPyEeLr7LyVuOf_dr59-PWzJm6Fu4mZP0LDk0pg1Fxlx0ceck5T0VUFCggzdoVgKb6uaC_nBVcnj-jYcACSAHKH06'
     })
     const url= `https://api.spotify.com/v1/${query}`
     return this.http.get(url,{headers})

@@ -1,49 +1,44 @@
 <app-loading *ngIf="loading"></app-loading>
-
-
-<div class="row" *ngIf="!loading">
-    <div class="col-4">
-        <img [src]="artista.images | noImg" alt="" class="img-thumb img-circle">
-    </div>
-    <div class="col">
-        <h1>{{artista.name}}</h1>
-        <p>
-            <a [href]="artista.external_urls.spotify" target="_blank">Ir a la Páguina Oficial </a>
-        </p>
-    </div>
-    <div class="col-4">
-        <button routerLink="/search" class="btn btn-outline-danger">Regresar</button>
-    </div>
-</div>
-<div class="m-4" *ngIf="!loading">
-  <div class="table-responsive-sm">
-
-    <table  class="table caption-top" style="color:white">
-        
-        <thead>
-          <tr>
-            <th scope="col-2">Foto</th>
-            <th scope="col-3">Album</th>
-            <th scope="col-2">Cancion</th>
-            <th scope="col-5">Vista Previa</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let item of top; let i = index">
-            <td>
-                <img [src]="item.album.images | noImg" class="img-thumb img-circle" style="height: 50px;width: 50px;" alt="">
-            </td>
-            <td>{{item.album.name}}</td>
-            <td>{{item.name}}</td>
-            <td>
-              <iframe [src]="item.id | domseguro:'https://open.spotify.com/embed/track/'" width="300" height="80"
-                  frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-
-                <!-- <audio [src]="item.preview_url" controls></audio> -->
-            </td>
-          </tr>
-        </tbody>
-      </table>
+<div class="row " *ngIf="!loading">
+  <div class="col-4">
+    <img [src]="artista.images | noImg" alt="" class="img-thumb img-circle">
   </div>
-
+  <div class="col">
+    <h1>{{artista.name}}</h1>
+    <p>
+      <a [href]="artista.external_urls.spotify" target="_blank">Ir a la Páguina Oficial </a>
+    </p>
+  </div>
+  <div class="col-4">
+    <button routerLink="/search" class="btn btn-outline-danger">Regresar</button>
+  </div>
+</div>
+<div class="mt-6" *ngIf="!loading">
+  <div class="table-responsive-sm table-responsive-xl" style="display: flex;align-items: center; justify-content: center; text-align: center;">
+    <table class="table caption-top " style="color:white;">
+      <thead>
+        <tr>
+          <th scope="col">Foto</th>
+          <th scope="col">Album</th>
+          <th scope="col">Cancion</th>
+          <th scope="col">Vista Previa</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of top;">
+          <td>
+            <img [src]="item.album.images | noImg" class="img-thumb img-circle" style="height: 50px;width: 50px;"
+              alt="">
+          </td>
+          <td>{{item.album.name}}</td>
+          <td>{{item.name}}</td>
+          <td class="">
+            <iframe [src]="item.id | domseguro:'https://open.spotify.com/embed/track/'" width="300" height="80"
+              frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+            <!-- <audio [src]="item.preview_url" controls></audio> -->
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
